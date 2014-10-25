@@ -20,7 +20,7 @@
       "url": "https://github.com/AndreasPizsa/kickstart/blob/master/LICENSE-MIT"
     }
   ],
-  "main": "index.js",
+  "main": "src/kickstart.litcoffee",
   "engines": {
     "node": ">=0.10.0"
   },
