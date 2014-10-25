@@ -20,5 +20,5 @@ Applications can pass the names other "modules" in the `env.uses` parameters. Th
 
       env.uses = env.uses.split(' ') if _.isString env.uses
       env.uses = [env.uses] if not _.isArray env.uses
-      env = env.use "./startup-#{mod}" for mod in env.uses
+      env = env.use "kickstart-#{mod}" for mod in env.uses
       return env
