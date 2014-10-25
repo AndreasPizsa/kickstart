@@ -1,0 +1,50 @@
+{
+  "name": "kickstarting",
+  "description": "A very lightweight modular architecture to kickstart applications",
+  "version": "0.0.1",
+  "homepage": "https://github.com/AndreasPizsa/kickstart",
+  "author": {
+    "name": "Andreas Pizsa",
+    "url": "http://github.com/AndreasPizsa"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/AndreasPizsa/kickstart.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AndreasPizsa/kickstart/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/AndreasPizsa/kickstart/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "verb": ">= 0.2.6"
+  },
+  "peerDependencies": {
+    "coffee-script": "^1.8.0",
+    "lodash": "^2.4.1",
+    "nconf": "*",
+    "lodash": "*",
+    "bunyan": "*"
+  },
+  "keywords": [
+    "kickstart",
+    "launch",
+    "boot",
+    "application",
+    "architecture"
+  ],
+  "dependencies": {
+  }
+}
