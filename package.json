@@ -30,6 +30,7 @@
   },
   "devDependencies": {
     "coffee-script": "^1.8.0",
+    "lodash": "^2.4.1",
     "mocha": "*",
     "verb": ">= 0.2.6"
   },
