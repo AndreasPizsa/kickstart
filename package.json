@@ -29,11 +29,11 @@
     "test": "mocha --compilers coffee:coffee-script/register -R spec"
   },
   "devDependencies": {
+    "coffee-script": "^1.8.0",
     "mocha": "*",
     "verb": ">= 0.2.6"
   },
   "peerDependencies": {
-    "coffee-script": "^1.8.0",
     "lodash": "^2.4.1"
   },
   "keywords": [
