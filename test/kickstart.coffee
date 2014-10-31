@@ -18,3 +18,23 @@ describe 'kickstart',->
   it 'exports the correct pkginfo with a custom rootDir',->
     env = require('../') rootDir: __dirname
     assert.deepEqual require('./package.json'), env.pkginfo
+
+  it 'can `use` packages declared in the ’uses’ option ',->
+    mockery = require 'mockery'
+    fakeModule = (env)->
+      env.fake = 'fake'
+      return env
+
+    anotherFakeModule = (env)->
+      env.anotherFake = "another #{env.fake}"
+      return env
+
+    path = require 'path'
+    mockery.enable();
+    mockery.registerAllowables ['../','path',path.resolve "#{__dirname}/../package.json"]
+    mockery.registerMock 'kickstart-fake', fakeModule
+    mockery.registerMock 'kickstart-anotherFake', anotherFakeModule
+    env = require('../')(uses:'fake anotherFake')
+    assert.deepEqual env.fake, 'fake'
+    assert.deepEqual env.anotherFake, 'another fake'
+    mockery.disable();
