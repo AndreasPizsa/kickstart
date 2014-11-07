@@ -1,7 +1,7 @@
 {
   "name": "kickstarting",
-  "description": "A very lightweight modular architecture to kickstart applications",
-  "version": "0.0.3",
+  "description": "A very lightweight modular architecture to kickstart node applications",
+  "version": "0.0.4",
   "homepage": "https://github.com/AndreasPizsa/kickstart",
   "author": {
     "name": "Andreas Pizsa",
