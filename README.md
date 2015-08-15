@@ -5,6 +5,8 @@
 ## About
 An ultra lightweight way of setting up a standard application runtime environment by pulling in and initializing core dependencies in a well-defined manner without having to repeat yourself.
 
+# Why
+
 This basic module starts out with configuration (`nconf`) and logging (`bunyan`).
 
 * nconf
@@ -87,9 +89,9 @@ Please [report any bugs or feature requests](https://github.com/AndreasPizsa/kic
 ## Author
 
 **Andreas Pizsa**
- 
+
 + [github/AndreasPizsa](https://github.com/AndreasPizsa)
-+ [twitter/AndreasPizsa](http://twitter.com/AndreasPizsa) 
++ [twitter/AndreasPizsa](http://twitter.com/AndreasPizsa)
 
 
 

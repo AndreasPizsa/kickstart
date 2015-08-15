@@ -1,5 +1,13 @@
 An ultra lightweight way of setting up a standard application runtime environment by pulling in and initializing core dependencies in a well-defined manner without having to repeat yourself.
 
+## Motivation
+
+After writing a few applications you'll usually identify a few best practice patterns for other apps.
+Just like a package manager manages dependencies, kickstarting does the same for services.
+
+Applications are made of multiple components
+
+
 This basic module starts out with configuration (`nconf`) and logging (`bunyan`).
 
 * nconf

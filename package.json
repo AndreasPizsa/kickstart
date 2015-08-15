@@ -29,14 +29,14 @@
     "test": "mocha --compilers coffee:coffee-script/register -R spec"
   },
   "devDependencies": {
-    "coffee-script": "^1.8.0",
-    "lodash": "^2.4.1",
+    "coffee-script": ">=1.8.0",
+    "lodash": ">=2.4.1",
     "mocha": "*",
     "mockery": "^1.4.0",
     "verb": ">= 0.2.6"
   },
   "peerDependencies": {
-    "lodash": "^2.4.1"
+    "lodash": ">=2.4.1"
   },
   "keywords": [
     "kickstart",

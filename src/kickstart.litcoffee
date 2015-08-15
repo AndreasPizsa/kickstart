@@ -11,14 +11,14 @@ Reusable modules for various startup tasks
 It should not be necessary to pass `rootDir` in `options`, but it’s supported
 here for edge cases.
 
-      unless env.rootDir?
-        env.rootDir = path.dirname require.main.filename
+      env.rootDir ?= path.dirname require.main.filename
+      console.log env.rootDir
 
 When running under a testing environment such as `mocha`, `require.main` will
 point to mocha instead of our app. Let’s correct this. We're using a very basic
 strategy for now; future strategies might include getting our own parent etc.
 
-        env.rootDir = env.rootDir.replace /\/node_modules\/.*/,''
+      env.rootDir = env.rootDir.replace /\/node_modules\/.*/,''
 
 ## `pkgname`
 
@@ -35,13 +35,18 @@ As a rule, modules can not "overwrite" existing environment variables.
 
 ## `use`
 
-      env.use = (name)-> _.extend {},require(name)(env),env
+      env.use = (name,options)->
+        console.log name,options
+        _.extend {},(require(name)(env,options)),env
 
 ## `uses`
 
-      env.uses = env.uses || []
-      env.uses = env.uses.split(' ') if _.isString env.uses
-      env.uses = [env.uses] if not _.isArray env.uses
-      env = env.use "kickstart-#{mod}" for mod in env.uses
+      env.uses = env.uses || {}
+      env.uses = env.uses.split(/\s+/) if _.isString env.uses
+      if _.isArray env.uses
+        array = env.uses
+        env.uses = {}
+        env.uses[name]={} for name in array
+      env = env.use("kickstart-#{mod}",params) for mod,params of env.uses
 
       return env

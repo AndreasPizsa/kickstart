@@ -21,7 +21,7 @@ describe 'kickstart',->
 
   it 'can `use` packages declared in the ’uses’ option ',->
     mockery = require 'mockery'
-    fakeModule = (env)->
+    fakeModule = (env,options)->
       env.fake = 'fake'
       return env
 

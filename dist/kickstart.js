@@ -5,31 +5,38 @@
   _ = require('lodash');
 
   module.exports = function(options) {
-    var env, mod, path, pkgname, _i, _len, _ref;
+    var array, env, mod, name, params, path, pkgname, _i, _len, _ref;
     env = _.extend({
       _: _
     }, options);
     path = require('path');
     if (env.rootDir == null) {
       env.rootDir = path.dirname(require.main.filename);
-      env.rootDir = env.rootDir.replace(/\/node_modules\/.*/, '');
     }
+    console.log(env.rootDir);
+    env.rootDir = env.rootDir.replace(/\/node_modules\/.*/, '');
     pkgname = path.resolve(env.rootDir, './package.json');
     env.pkginfo = require(pkgname);
-    env.use = function(name) {
-      return _.extend({}, require(name)(env), env);
+    env.use = function(name, options) {
+      console.log(name, options);
+      return _.extend({}, require(name)(env, options), env);
     };
-    env.uses = env.uses || [];
+    env.uses = env.uses || {};
     if (_.isString(env.uses)) {
-      env.uses = env.uses.split(' ');
+      env.uses = env.uses.split(/\s+/);
     }
-    if (!_.isArray(env.uses)) {
-      env.uses = [env.uses];
+    if (_.isArray(env.uses)) {
+      array = env.uses;
+      env.uses = {};
+      for (_i = 0, _len = array.length; _i < _len; _i++) {
+        name = array[_i];
+        env.uses[name] = {};
+      }
     }
     _ref = env.uses;
-    for (_i = 0, _len = _ref.length; _i < _len; _i++) {
-      mod = _ref[_i];
-      env = env.use("kickstart-" + mod);
+    for (mod in _ref) {
+      params = _ref[mod];
+      env = env.use("kickstart-" + mod, params);
     }
     return env;
   };
