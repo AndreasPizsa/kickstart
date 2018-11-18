@@ -1,4 +1,4 @@
-# kickstarting [![Travis Build Status](http://img.shields.io/travis/AndreasPizsa/kickstart.svg?style=flat-square "Travis Build Status")](http://travis-ci.org/AndreasPizsa/kickstart) ![npm Release](http://img.shields.io/npm/v/kickstarting.svg?style=flat-square "npm Release") ![npm License](http://img.shields.io/npm/l/kickstarting.svg?style=flat-square "npm License")
+# kickstarting [![Travis Build Status](http://img.shields.io/travis/AndreasPizsa/kickstart.svg?style=flat-square "Travis Build Status")](http://travis-ci.org/AndreasPizsa/kickstart) [![Greenkeeper badge](https://badges.greenkeeper.io/AndreasPizsa/kickstart.svg)](https://greenkeeper.io/) ![npm Release](http://img.shields.io/npm/v/kickstarting.svg?style=flat-square "npm Release") ![npm License](http://img.shields.io/npm/l/kickstarting.svg?style=flat-square "npm License")
 
 > A very lightweight modular architecture to kickstart applications
 
